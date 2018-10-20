@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
-
+    
     // MARK: Properties
     @IBOutlet weak var recordButton: UIButton!
     
@@ -55,11 +55,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             try! session.setActive(false)
             audioRecorder.stop()
             
-
+            
         }
         isRecording.toggle()
     }
-
+    
     func avAudioRecord(recordFileName:String) {
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)[0] as String
@@ -71,11 +71,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         let session = AVAudioSession.sharedInstance()
         // use try! - do not handle the exception
         // Swift version 4.2
-//        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        //        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         
         // Swift version 4.0
         try! session.setCategory(AVAudioSessionCategoryPlayback, with: AVAudioSessionCategoryOptions.defaultToSpeaker)
-    
+        
         //  Init the AVAudioRecorder and call the record method to record
         // the call can throw so need to use try
         try! audioRecorder = AVAudioRecorder(url: filePathURL!, settings: [:])
@@ -85,13 +85,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         audioRecorder.prepareToRecord()
         audioRecorder.record()
         
-    
+        
     }
     
     
     // MARK: Method that we need to implement because the class is conformed to the AVAudioRecorderDelegate
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-
+        
         print("delegate method : DidFinishRecording...")
         if (flag) {
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
@@ -99,8 +99,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
             print("some error occurs when recording!")
         }
     }
-
     
+    // MARK: Navigation - pass the recordedAudioURL to the destination view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "stopRecording") {

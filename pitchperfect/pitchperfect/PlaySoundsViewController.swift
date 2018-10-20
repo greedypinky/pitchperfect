@@ -36,7 +36,7 @@ class PlaySoundsViewController: UIViewController {
         case reverb = 3
         case chipmunk = 4
         case vader = 5
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,21 +47,11 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         print("view did load >>>>> ")
+        print("view did load >>>>> ")
         print(recordedAudioURL)
         setupAudio()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: Actions
     
@@ -89,5 +79,5 @@ class PlaySoundsViewController: UIViewController {
         print("Stop Audio Button Pressed")
         configureUI(.notPlaying)
     }
-
+    
 }
