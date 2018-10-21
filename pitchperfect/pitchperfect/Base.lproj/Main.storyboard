@@ -80,15 +80,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FB4-Bf-SmJ" userLabel="Top Stack View">
-                                <rect key="frame" x="16" y="64" width="272" height="336"/>
+                                <rect key="frame" x="16" y="72" width="288" height="328"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BlF-bN-rse" userLabel="Stack View1">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="106.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="104"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0e-mK-eBH" userLabel="fastButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="136" height="106.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="104"/>
                                                 <state key="normal" image="fast2x-iphone"/>
                                                 <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -96,8 +99,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxS-CL-ZCa" userLabel="slowButton">
-                                                <rect key="frame" x="144" y="0.0" width="128" height="106.5"/>
+                                                <rect key="frame" x="152" y="0.0" width="136" height="104"/>
                                                 <state key="normal" image="slow2x-iphone"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="HCK-Jj-45Q" eventType="touchUpInside" id="GFQ-Ix-wxv"/>
                                                 </connections>
@@ -105,18 +113,28 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Y4u-XU-O8n" userLabel="Stack View2">
-                                        <rect key="frame" x="0.0" y="114.5" width="272" height="107"/>
+                                        <rect key="frame" x="0.0" y="112" width="288" height="104"/>
                                         <subviews>
                                             <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jin-BO-XtJ" userLabel="echo">
-                                                <rect key="frame" x="0.0" y="0.0" width="136" height="107"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="104"/>
                                                 <state key="normal" image="echo"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="HCK-Jj-45Q" eventType="touchUpInside" id="5Rf-xP-Geh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHJ-2u-OVr" userLabel="reverb">
-                                                <rect key="frame" x="144" y="0.0" width="128" height="107"/>
+                                                <rect key="frame" x="152" y="0.0" width="136" height="104"/>
                                                 <state key="normal" image="reverb"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="HCK-Jj-45Q" eventType="touchUpInside" id="21w-gm-xFx"/>
                                                 </connections>
@@ -124,18 +142,28 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wKP-rz-sTl" userLabel="Stack View3">
-                                        <rect key="frame" x="0.0" y="229.5" width="272" height="106.5"/>
+                                        <rect key="frame" x="0.0" y="224" width="288" height="104"/>
                                         <subviews>
                                             <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm5-cv-NVU" userLabel="chipmunk">
-                                                <rect key="frame" x="0.0" y="0.0" width="136" height="106.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="104"/>
                                                 <state key="normal" image="chipmunk2x-iphone"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="HCK-Jj-45Q" eventType="touchUpInside" id="TXV-K1-OFR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjK-0J-RNK" userLabel="darkvader">
-                                                <rect key="frame" x="144" y="0.0" width="128" height="106.5"/>
+                                                <rect key="frame" x="152" y="0.0" width="136" height="104"/>
                                                 <state key="normal" image="darthvader2x-iphone"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="imageView.ContentMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="playSoundForButton:" destination="HCK-Jj-45Q" eventType="touchUpInside" id="7wp-r4-YEh"/>
                                                 </connections>
@@ -160,8 +188,8 @@
                         <constraints>
                             <constraint firstItem="a7h-cx-rHI" firstAttribute="centerX" secondItem="NkX-Wb-UTt" secondAttribute="centerX" id="51j-VU-kYd"/>
                             <constraint firstItem="a7h-cx-rHI" firstAttribute="top" secondItem="FB4-Bf-SmJ" secondAttribute="bottom" constant="8" id="Fod-FN-MPX"/>
-                            <constraint firstItem="FB4-Bf-SmJ" firstAttribute="top" secondItem="NkX-Wb-UTt" secondAttribute="top" id="YIE-YC-mWq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FB4-Bf-SmJ" secondAttribute="trailing" constant="16" id="o4V-tK-fvT"/>
+                            <constraint firstItem="FB4-Bf-SmJ" firstAttribute="top" secondItem="NkX-Wb-UTt" secondAttribute="top" constant="8" id="YIE-YC-mWq"/>
+                            <constraint firstItem="NkX-Wb-UTt" firstAttribute="trailing" secondItem="FB4-Bf-SmJ" secondAttribute="trailing" constant="16" id="o4V-tK-fvT"/>
                             <constraint firstItem="FB4-Bf-SmJ" firstAttribute="leading" secondItem="NkX-Wb-UTt" secondAttribute="leading" constant="16" id="y1J-wJ-vAX"/>
                             <constraint firstItem="a7h-cx-rHI" firstAttribute="bottom" secondItem="NkX-Wb-UTt" secondAttribute="bottom" constant="-8" id="ycR-g6-C9V"/>
                         </constraints>
