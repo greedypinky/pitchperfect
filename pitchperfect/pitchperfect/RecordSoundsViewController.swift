@@ -27,9 +27,21 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     var isRecording : Bool = false
     
     @IBAction func startRecord(_ sender: Any) {
+        print("start recoding")
+        isRecording = true
         changeButtonState(isRecording)
-        
+        avAudioRecord(recordFileName: recordFileName)
     }
+    
+    @IBAction func stopRecord(_ sender: Any) {
+        print("stop recording")
+        isRecording = false
+        changeButtonState(isRecording)
+        let session = AVAudioSession.sharedInstance()
+        try! session.setActive(false)
+        audioRecorder.stop()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,26 +49,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     }
     
     func changeButtonState(_ recording:Bool) {
-        if (!recording) {
-            recordingLabel.text = RECORDING
-            recordButton.isEnabled = false
-            stopRecordButton.isEnabled = true
-            print("start recoding")
-            avAudioRecord(recordFileName: recordFileName)
-            
-        } else {
-            recordingLabel.text = BEFORE_RECORDING
-            stopRecordButton.isEnabled = false
-            recordButton.isEnabled = true
-            
-            print("stop recording")
-            
-            let session = AVAudioSession.sharedInstance()
-            try! session.setActive(false)
-            audioRecorder.stop()
-            
-            
-        }
+        recordingLabel.text = recording ? RECORDING : BEFORE_RECORDING
+        recordButton.isEnabled = !recording
+        stopRecordButton.isEnabled = recording
         isRecording.toggle()
     }
     

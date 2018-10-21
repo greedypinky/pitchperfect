@@ -29,17 +29,11 @@ class PlaySoundsViewController: UIViewController {
     var stopTimer: Timer!
     
     enum ButtonType: Int {
-        
-        case fast = 0
-        case slow = 1
-        case echo = 2
-        case reverb = 3
-        case chipmunk = 4
-        case vader = 5
-        
+        case Fast = 0, Slow, Echo, Reverb, Chipmunk, Vader
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureUI(.notPlaying)
     }
     
@@ -58,17 +52,17 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSoundForButton(_ sender: UIButton) {
         print("Play Sound Button Pressed")
         switch(ButtonType(rawValue: sender.tag)!) {
-        case .slow:
+        case .Slow:
             playSound(rate: 0.5)
-        case .fast:
+        case .Fast:
             playSound(rate: 1.5)
-        case .chipmunk:
+        case .Chipmunk:
             playSound(pitch: 1000)
-        case .vader:
+        case .Vader:
             playSound(pitch: -1000)
-        case .echo:
+        case .Echo:
             playSound(echo: true)
-        case .reverb:
+        case .Reverb:
             playSound(reverb: true)
         }
         
