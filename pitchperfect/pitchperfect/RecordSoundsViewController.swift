@@ -112,5 +112,4 @@ extension RecordSoundsViewController : AVAudioRecorderDelegate {
                 print("some error occurs when recording!")
             }
         }
-    
 }
