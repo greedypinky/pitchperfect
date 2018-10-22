@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
+class RecordSoundsViewController: UIViewController {
     
     // MARK: Properties
     @IBOutlet weak var recordButton: UIButton!
@@ -83,18 +83,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
         
     }
     
-    
-    // MARK: Method that we need to implement because the class is conformed to the AVAudioRecorderDelegate
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        
-        print("delegate method : DidFinishRecording...")
-        if (flag) {
-            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-        } else {
-            print("some error occurs when recording!")
-        }
-    }
-    
     // MARK: Navigation - pass the recordedAudioURL to the destination view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -111,3 +99,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     
 }
 
+
+// MARK: - extension for AVAudioRecorderDelegate delegate
+extension RecordSoundsViewController : AVAudioRecorderDelegate {
+    
+        func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+
+            print("delegate method : DidFinishRecording...")
+            if (flag) {
+                performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+            } else {
+                print("some error occurs when recording!")
+            }
+        }
+    
+}
